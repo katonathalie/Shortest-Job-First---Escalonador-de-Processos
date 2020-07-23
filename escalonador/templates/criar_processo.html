@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processos</title>
+    <h1>Inserir Processo na Lista de Pronto</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Inserir</button>
+    </form>
+</head>
+<body>
+
+</body>
+</html>

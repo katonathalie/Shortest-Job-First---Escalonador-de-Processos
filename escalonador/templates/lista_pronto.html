@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processos</title>
+
+    <h1> Lista de Pronto </h1>
+
+    <ul><a href="{% url 'criar_processo' %}" target="_blank">Inserir processo na lista de pronto</a></ul>
+
+
+    <table border="1">
+      <tr>
+        <td>Processo</td>
+        <td>Tamanho</td>
+        <td>Hora de Chegada</td>
+      </tr>
+        {% for processo in processos %}
+      <tr>
+        <td>{{ processo.nome }}</td>
+        <td>{{ processo.tamanho }}</td>
+        <td>{{ processo.chegada }}</td>
+      </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+        function timedRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);",timeoutPeriod);
+        }
+        window.onload = timedRefresh(1000);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
